@@ -28,7 +28,7 @@ My friend, a medical student, has been suffered from the trouble about how to ca
 
 ## Install
 
-It is out of the box. The latest release is [proximity_caculated-v1.0.0]
+It is out of the box. The latest release is [proximity_caculated-v1.0.0](https://github.com/pppineapple/ProximityCaculated/releases/tag/v1.0.0)
 
 ### Dependency
 This repo is based on python2.7.
