@@ -24,7 +24,7 @@ This repository contains:
 
 ## Background
 
-My friend, a medical student, has been suffered from the trouble about how to caculate proximity about drugs and AD-genes in his project. when I heard her problem, maybe it's not difficult to use python to figure it out. So we decided to beat it, and we solved this problem after readed papers, discussed the formula，debated for it's idea, and fixed some coding bug. This is very cool experenice!
+My friend, a medical student, has been suffered from the trouble about how to caculate proximity about drugs and AD-genes in her project. when I heard her problem, maybe it's not difficult to use python to figure it out. So we decided to beat it, and we solved this problem after readed papers, discussed the formula，debated for it's idea, and fixed some coding bug. This is very cool experenice!
 
 ## Install
 
