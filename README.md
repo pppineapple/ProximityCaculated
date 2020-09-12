@@ -99,10 +99,6 @@ The output about `{'data/medicine2': 1.9894987751650182, 'data/medicine1': 2.206
 *   Z value of medicine2 is 1.9894987751650182
 *   Z value of medicine1 is 2.2067697024924824
 
-
-- [Art of Readme](https://github.com/noffle/art-of-readme) - 💌 Learn the art of writing quality READMEs.
-- [open-source-template](https://github.com/davidbgk/open-source-template/) - A README template to encourage open-source contributions.
-
 ## Maintainers
 
 [@pppineapple](https://github.com/pppineapple)
