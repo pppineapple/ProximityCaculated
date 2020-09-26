@@ -69,6 +69,9 @@ by an integrated network and transcriptome analysis](https://academic.oup.com/bi
     >    <a href="https://www.codecogs.com/eqnedit.php?latex=z(S,&space;T)&space;=&space;\frac{d(S,&space;T)-\mu&space;_{d(S,R)}}{\sigma&space;_{d(S,&space;R)}}" target="_blank"><img src="https://latex.codecogs.com/png.latex?z(S,&space;T)&space;=&space;\frac{d(S,&space;T)-\mu&space;_{d(S,R)}}{\sigma&space;_{d(S,&space;R)}}" title="z(S, T) = \frac{d(S, T)-\mu _{d(S,R)}}{\sigma _{d(S, R)}}" /></a>
 
 *   `data/target_filenames`: This file is made of a list of medicine. So how many medincine you put  in this file, how many medincine genes file you must put in data directory.
+*   When we loop for target_filenames, we will check if medicine genes and ppi network nodes has same elements or not.
+    *   If medicine genes and ppi network nodes has same elements: We will caculate the proximity between medicine genes and ad-genes.
+    *   If not: We will step into next medicine
 *   Attention: There are two choice about how to make a correct `data/target_filenames` and make sure it will be work:
     *   Using relative path about `medicine file` and `main.py`, such as `data/medicine1` in `data/target_filenames` I made.
     *   Using absolute path about `medicine file`, such as `/Users/pineapple/PycharmProjects/xpp/data/medicine1`
@@ -80,7 +83,7 @@ by an integrated network and transcriptome analysis](https://academic.oup.com/bi
 python main.py --help
 usage: main.py [-h] --ppi_data_filepath PPI_DATA_FILEPATH --ad_filepath
                AD_FILEPATH --target_filenames TARGET_FILENAMES
-               [--random_times RANDOM_TIMES]
+               [--random_times RANDOM_TIMES]  --output OUTPUT
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -88,12 +91,15 @@ optional arguments:
   --ad_filepath         filepath of ad data
   --target_filenames    filepath of medinces
   --random_times        random sample size, default is 2
+  --output OUTPUT       filepath of output
 ```
 
 ```sh
 python2.7 main.py --ppi_data_filepath data/PPI_cluster.txt --ad_filepath data/disease_cluster.txt --target_filenames data/target_filenames
 >>> {'data/medicine2': 1.9894987751650182, 'data/medicine1': 2.2067697024924824}
 ```
+
+The caculating output will be printed in Terminal and saved in output file.
 
 The output about `{'data/medicine2': 1.9894987751650182, 'data/medicine1': 2.2067697024924824}` means:
 *   Z value of medicine2 is 1.9894987751650182

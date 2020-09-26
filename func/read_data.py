@@ -19,3 +19,19 @@ def read_item(filepath):
     with open(filepath, "r") as f:
         data_list = map(lambda x: x.strip(), f.readlines())
     return data_list
+
+
+def medicine_existd_ppi(medi_filepath, ppi_filepath):
+    target_data = read_item(medi_filepath)
+    g_data = read_ppi_file(ppi_filepath)
+    g_data_list = []
+    for g1, g2 in g_data:
+        if g1 not in g_data_list:
+            g_data_list.append(g1)
+        if g2 not in g_data_list:
+            g_data_list.append(g2)
+
+    if set(target_data) & set(g_data_list):
+        return True
+    else:
+        return False

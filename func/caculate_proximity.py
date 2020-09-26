@@ -13,6 +13,7 @@ import networkx as nx
 from read_data import read_ppi_file
 from read_data import read_item
 
+
 def shortest_dist(graph, from_node, to_node):
     try:
         ans = nx.dijkstra_path_length(graph, from_node, to_node)
@@ -42,7 +43,11 @@ def caculate_proximity(s_list, t_list, degree_dict, G):
             inf_num += 1
         else:
             ans += s_min
-    return ans / (len(t_list) - inf_num)
+    if (len(t_list) - inf_num) > 0:
+        return ans / (len(t_list) - inf_num)
+    else:
+        return None
+
 
 def random_sample(all_nodes, n):
     return sample(all_nodes, n)
@@ -68,17 +73,23 @@ def main(ppi_data_file, ad_data_file, target_data_file, random_times):
     # Creating a network and caculating the shortest distance from node1 to node2.
     G = nx.Graph()
     G.add_edges_from(g_data)
-    dist_S_T = caculate_proximity(ad_data, target_data, degree_dict, G)
+    ad_data_filter = list(set(ad_data) & set(G.nodes()))
+    dist_S_T = caculate_proximity(ad_data_filter, target_data, degree_dict, G)
 
     # sample R from network nodes.
-    seed(1234)
-    dist_list = []
-    for i in range(random_times):
-        r_list = random_sample(G.nodes(), len(target_data))
-        dist_s_r = caculate_proximity(ad_data, r_list, degree_dict, G)
-        dist_list.append(dist_s_r)
+    if dist_S_T:
+        seed(1234)
+        dist_list = []
+        for i in range(random_times):
+            r_list = random_sample(G.nodes(), len(target_data))
+            dist_s_r = caculate_proximity(ad_data_filter, r_list, degree_dict, G)
+            if dist_s_r:
+                dist_list.append(dist_s_r)
 
-    dist_list_mean = numpy.mean(dist_list)
-    dist_list_std = numpy.std(dist_list)
-    Z = (dist_S_T - dist_list_mean) / dist_list_std
+        dist_list_mean = numpy.mean(dist_list)
+        dist_list_std = numpy.std(dist_list)
+        Z = (dist_S_T - dist_list_mean) / dist_list_std
+    else:
+        Z = None
     return Z
+
