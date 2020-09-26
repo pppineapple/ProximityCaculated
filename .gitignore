@@ -2,6 +2,10 @@
 /.DS_Store
 /backup
 /conf
-/test
+/test*
 /venv
 /.gitattributes
+data/disease_cluster.txt
+/data
+output*
+/PPI
