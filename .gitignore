@@ -7,5 +7,6 @@
 /.gitattributes
 data/disease_cluster.txt
 /data
-output*
+/output*
 /PPI
+data/disease_cluster.txt
