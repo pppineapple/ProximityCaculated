@@ -96,7 +96,7 @@ optional arguments:
 ```
 
 ```sh
-python2.7 main.py --ppi_data_filepath data/PPI_cluster.txt --ad_filepath data/disease_cluster.txt --target_filenames data/target_filenames
+python2.7 main.py --ppi_data_filepath data/PPI_cluster.txt --ad_filepath data/disease_cluster.txt --target_filenames data/target_filenames --output output.csv
 >>> {'data/medicine2': 1.9894987751650182, 'data/medicine1': 2.2067697024924824}
 ```
 
