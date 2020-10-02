@@ -5,8 +5,6 @@
 /test*
 /venv
 /.gitattributes
-data/disease_cluster.txt
-/data
 /output*
 /PPI
 data/disease_cluster.txt

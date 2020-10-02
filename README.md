@@ -57,6 +57,7 @@ You need to install some python packages as below:
 │   ├─ medicine1               # target genes for medicine1
 │   └─ medicine2               # target genes for medicine2
 ├─ main.py                     # main script of caculating proximity for example data
+├─ main_mult.py                # main script of caculating proximity for example data, which can be caculating proximity for example data repeatedly.
 └─ README.md
 ```
 
